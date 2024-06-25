@@ -21,7 +21,7 @@ FormFun is a simple Django application that allows users to create forms and rec
 
     ```bash
     git clone https://github.com/ArtyomKuvshinov/FormSpreeCopy.git
-    cd formfun
+    cd FormSpreeCopy
     ```
 
 2. Create and activate a virtual environment:
