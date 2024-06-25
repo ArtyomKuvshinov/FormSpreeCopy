@@ -1,0 +1,17 @@
+{% extends "base_generic.html" %}
+
+{% block title %}Form Detail{% endblock %}
+
+{% block content %}
+<div class="row">
+    <div class="col-md-6 offset-md-3">
+        {% if form.user == request.user %}
+        <h2>Form Detail</h2>
+        <p>Form link: <a href="http://127.0.0.1:8000/r/{{ form.form_id }}">http://127.0.0.1:8000/r/{{ form.form_id }}</a></p>
+        <p>Email: {{ form.email }}</p>
+        {% else %}
+        <p>You don't have permission to view this form</p>
+        {% endif %}
+    </div>
+</div>
+{% endblock %}

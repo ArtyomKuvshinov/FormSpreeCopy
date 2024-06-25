@@ -1,0 +1,33 @@
+{% extends "base_generic.html" %}
+
+{% block title %}Main Page{% endblock %}
+
+{% block content %}
+<div class="row">
+    <div class="col-md-8 offset-md-2">
+        <h2>Welcome, {{ request.user.username }}!</h2>
+        <p>Your email: {{ request.user.email }}</p>
+        <h3>Your Forms</h3>
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>Form ID</th>
+                    <th>Email</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for form in user_forms %}
+                    <tr>
+                        <td>{{ form.form_id }}</td>
+                        <td>{{ form.email }}</td>
+                        <td>
+                            <a href="{% url 'form_detail' form_id=form.form_id %}" class="btn btn-info btn-sm">View</a>
+                        </td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+{% endblock %}
